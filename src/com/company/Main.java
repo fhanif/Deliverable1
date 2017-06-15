@@ -25,23 +25,33 @@ public class Main {
         userNumLength = userNumString.length();
 
         //for loop, from first character (i = 0) to last character (length - 1)
+
+
+        cubed(userNum, userNumString, userNumLength, digitCubedTotal);
+
+    }
+
+    public static void cubed(int userNum, String userNumString, int userNumLength, int digitCubedTotal) {
+        int i;
+        char indivDigit;
+        int indivDigitInt;
+        int indivDigitCubed;
         for (i = 0; i <= userNumLength - 1; ++i) {
             //separating the individual digits in the number entered (type char)
             indivDigit = userNumString.charAt(i);
-            //converting individual digit (character) to an integer -- not sure about yellow highlight here????????)
-            indivDigitInt = Integer.parseInt(userNumString.valueOf(indivDigit));
+            //converting individual digit (character) to an integer
+            indivDigitInt = Integer.parseInt(String.valueOf(indivDigit));
             //calculating the cubes of the individual digits in number entered
             indivDigitCubed = indivDigitInt * indivDigitInt * indivDigitInt;
             //calculating total sum of all digits cubed in the number entered
             digitCubedTotal += indivDigitCubed;
         }
 
+
         //if statement to print true if total sum of cubes is equal to number entered
-        // how could have done this with a boolean???????
         if (digitCubedTotal == userNum) {
             System.out.print("True");
-        }
-        else {
+        } else {
             System.out.print("False");
         }
     }
